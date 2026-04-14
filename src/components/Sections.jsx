@@ -1,98 +1,116 @@
 import styles from './Sections.module.css'
 import { useState, useEffect, useRef } from 'react'
 
-const WA = 'https://wa.me/5581999999999?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta.'
+const WA      = 'https://wa.me/5581994385112?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta.'
+const IG      = 'https://instagram.com/mirela_albuquerque'
+const ABOUT_IMG   = '/images/sobre2-web.jpg'
+const CONTACT_IMG = '/images/hero2-web.jpg'
 
-// ── Images — replace with Dra. Mirela's real photos ──
-const ABOUT_IMG   = 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=900&q=92&fit=crop&crop=top'
-const CONTACT_IMG = 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&q=92&fit=crop&crop=top'
-
-// ────────────────────────────────────────────────────
-// INTRO STRIP
-// ────────────────────────────────────────────────────
+// ── INTRO ──────────────────────────────────────────
 export function Intro() {
   return (
     <div className={styles.intro}>
       <p className={styles.introQuote}>
-        "Um propósito claro: devolver confiança a cada paciente que entra pela porta."
+        "Não é só sobre cabelo. É sobre recuperar sua confiança."
       </p>
       <div className={styles.introDivider} aria-hidden="true" />
       <p className={styles.introText}>
-        A Dra. Mirela combina <strong>formação técnica em tricologia</strong> com
-        a precisão de uma <strong>anestesiologista</strong> — combinação rara que
-        garante diagnósticos apurados e procedimentos seguros em Recife, PE.
+        Na consulta da Dra. Mirela, cada paciente é avaliado de forma
+        <strong> completa e individualizada</strong>. Sua abordagem investiga
+        profundamente as causas, respeitando a história e as características de cada pessoa.
       </p>
     </div>
   )
 }
 
-// ────────────────────────────────────────────────────
-// ABOUT — styled like reference image 2
-// ────────────────────────────────────────────────────
+// ── ABOUT ──────────────────────────────────────────
 const CREDENTIALS = [
   'Médica formada pela Universidade Federal de Pernambuco (UFPE)',
   'Especialista em Tricologia pela Sociedade Brasileira de Dermatologia',
   'Membro da Sociedade Brasileira de Tricologia (SBTric)',
   'Pós-graduação em Dermatologia com ênfase em doenças do couro cabeludo',
-  'Atualização contínua em centros de excelência nacionais e internacionais',
+  'Tricoscopia com IA — videotricoscopia e laudo digital com análise de densidade',
 ]
 
 export function About() {
   return (
     <section id="sobre" className={styles.about}>
-      <div className={styles.aboutImg}>
-        <img src={ABOUT_IMG} alt="Dra. Mirela Albuquerque" />
-        <div className={styles.imgTag}>
-          <p>Recife, Pernambuco</p>
-          <strong>Dra. Mirela Albuquerque</strong>
+      <div className={styles.aboutInner}>
+        <div className={styles.aboutImg}>
+          <img src={ABOUT_IMG} alt="Dra. Mirela Albuquerque" />
+          <div className={styles.imgTag}>
+            <p>Recife, Pernambuco</p>
+            <strong>Dra. Mirela Albuquerque</strong>
+          </div>
         </div>
-      </div>
-      <div className={styles.aboutText}>
-        <span className={styles.eyebrow}>Sobre a médica</span>
-        <h2 className={styles.sectionTitle}>
-          Um olhar cuidadoso<br /><em>para cada fio.</em>
-        </h2>
-        <p className={styles.bodyText}>
-          A Dra. Mirela Albuquerque é médica tricologista dedicada a entender a causa raiz
-          dos problemas capilares de cada paciente. Sua formação robusta e atualização
-          constante permitem oferecer diagnósticos precisos e planos terapêuticos
-          individualizados.
-        </p>
-        <p className={styles.bodyText}>
-          Acredita que saúde capilar vai além da estética — é autoestima, bem-estar e
-          qualidade de vida. Por isso, cada consulta é conduzida com escuta ativa e atenção
-          aos detalhes que fazem a diferença no resultado final.
-        </p>
-        <ul className={styles.credList}>
-          {CREDENTIALS.map(c => (
-            <li key={c} className={styles.credItem}>
-              <span className={styles.credIcon} aria-hidden="true">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
-                </svg>
-              </span>
-              <span>{c}</span>
-            </li>
-          ))}
-        </ul>
-        <a href={WA} target="_blank" rel="noopener noreferrer" className={styles.btnPrimary} style={{alignSelf:'flex-start'}}>
-          Agendar Consulta <span>→</span>
-        </a>
+        <div className={styles.aboutText}>
+          <span className={styles.eyebrow}>Sobre a médica</span>
+          <h2 className={styles.sectionTitle}>
+            Cada cabelo tem<br /><em>uma história.</em>
+          </h2>
+          <p className={styles.bodyText}>
+            A Dra. Mirela Albuquerque é médica tricologista dedicada a entender a causa
+            raiz dos problemas capilares de cada paciente. Acredita que tratar a queda de
+            cabelo vai muito além de olhar apenas os fios.
+          </p>
+          <p className={styles.bodyText}>
+            Cada tratamento precisa ser único. Por isso, sua consulta investiga
+            profundamente as causas, respeitando a história e as características
+            individuais de cada paciente.
+          </p>
+          <ul className={styles.credList}>
+            {CREDENTIALS.map(c => (
+              <li key={c} className={styles.credItem}>
+                <span className={styles.credIcon} aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                </span>
+                <span>{c}</span>
+              </li>
+            ))}
+          </ul>
+          <a href={WA} target="_blank" rel="noopener noreferrer" className={styles.btnPrimary} style={{alignSelf:'flex-start'}}>
+            Agendar Consulta <span>→</span>
+          </a>
+        </div>
       </div>
     </section>
   )
 }
 
-// ────────────────────────────────────────────────────
-// TREATMENTS — card style like reference image 4
-// ────────────────────────────────────────────────────
+// ── TREATMENTS ─────────────────────────────────────
 const TREATMENTS = [
-  { tag: 'Cirurgia estética capilar',  title: 'Transplante de sobrancelhas', desc: 'Alta precisão, resultado natural e definitivo. Realizado com anestesia segura e especializada em cada procedimento.' },
-  { tag: 'Eflúvio & Telógeno',         title: 'Queda de cabelo',             desc: 'Investigação completa das causas — hormonal, nutricional, pós-parto ou sistêmica — com plano terapêutico estruturado.' },
-  { tag: 'Androgenética & Areata',     title: 'Alopecia',                    desc: 'Diagnóstico diferencial preciso e tratamento personalizado, com protocolos baseados em evidências científicas atualizadas.' },
-  { tag: 'Diagnóstico por imagem',     title: 'Tricoscopia',                 desc: 'Exame dermatoscópico de alta resolução — análise detalhada do couro cabeludo e dos fios sem biópsia.' },
-  { tag: 'Plasma Rico em Plaquetas',   title: 'PRP Capilar',                 desc: 'Fatores de crescimento do próprio paciente aplicados no couro cabeludo para estimular o bulbo capilar.' },
-  { tag: 'Nutrição & Estimulação',     title: 'Mesoterapia Capilar',         desc: 'Microinjeções de vitaminas e ativos regeneradores para nutrir os folículos e estimular o crescimento saudável.' },
+  {
+    tag: 'Calvície masculina & feminina',
+    title: 'Queda de cabelo',
+    desc: 'Investigação completa das causas — hormonal, nutricional, pós-parto ou sistêmica — com plano terapêutico personalizado e baseado em evidências.',
+  },
+  {
+    tag: 'Androgenética & Areata',
+    title: 'Alopecias',
+    desc: 'Diagnóstico diferencial preciso e tratamento individualizado para todas as formas de alopecia, com protocolos científicos atualizados.',
+  },
+  {
+    tag: 'Cirurgia estética capilar',
+    title: 'Transplante capilar e de sobrancelhas',
+    desc: 'Alta precisão e resultado natural. Realizado com anestesia segura por especialista. Protocolo exclusivo para regeneração de sobrancelhas.',
+  },
+  {
+    tag: 'Diagnóstico por imagem',
+    title: 'Tricoscopia com IA',
+    desc: 'Videotricoscopia com inteligência artificial e laudo digital com análise de densidade e contagem de fios — diagnóstico preciso antes de qualquer tratamento.',
+  },
+  {
+    tag: 'Plasma Rico em Plaquetas',
+    title: 'Terapias regenerativas',
+    desc: 'PRP e terapias autólogas que utilizam fatores de crescimento do próprio paciente para estimular o bulbo capilar e a recuperação da haste.',
+  },
+  {
+    tag: 'Nutrição & Estimulação',
+    title: 'Protocolos capilares',
+    desc: 'Diagnóstico e tratamento de doenças do couro cabeludo, mesoterapia e protocolos para recuperação da haste capilar com acompanhamento próximo.',
+  },
 ]
 
 export function Treatments() {
@@ -102,8 +120,11 @@ export function Treatments() {
         <div className={styles.treatsHeader}>
           <span className={styles.eyebrow}>Especialidades</span>
           <h2 className={styles.sectionTitle}>
-            Tratamentos<br /><em>especializados</em>
+            Como posso<br /><em>te ajudar?</em>
           </h2>
+          <p className={styles.treatsSubtitle}>
+            Especialista em saúde capilar. Cada fio importa, e você também.
+          </p>
         </div>
         <div className={styles.treatGrid}>
           {TREATMENTS.map(t => (
@@ -122,9 +143,51 @@ export function Treatments() {
   )
 }
 
-// ────────────────────────────────────────────────────
-// TESTIMONIALS — fixed height, smooth crossfade
-// ────────────────────────────────────────────────────
+// ── PROCESS (nova seção — o que você encontra na consulta) ─────────
+const PROCESS_ITEMS = [
+  'Análise clínica detalhada da sua queixa capilar',
+  'Investigação da sua história e fatores associados',
+  'Avaliação estética dos fios e do couro cabeludo',
+  'Exame físico com teste de queda e análise de afinamento',
+  'Tricoscopia com alta resolução',
+  'Videotricoscopia com inteligência artificial',
+  'Laudo digital com análise de densidade e contagem de fios',
+]
+
+export function Process() {
+  return (
+    <section id="consulta" className={styles.process}>
+      <div className="wrap">
+        <div className={styles.processGrid}>
+          <div className={styles.processLeft}>
+            <span className={styles.eyebrow}>O que você encontra</span>
+            <h2 className={styles.sectionTitle}>
+              Na minha<br /><em>consulta capilar</em>
+            </h2>
+            <p className={styles.bodyText}>
+              Cada paciente é avaliado de forma completa e individualizada.
+              Tecnologia avançada e protocolos personalizados integram
+              saúde, estética e regeneração.
+            </p>
+            <a href={WA} target="_blank" rel="noopener noreferrer" className={styles.btnPrimary} style={{alignSelf:'flex-start',marginTop:'1.5rem'}}>
+              Agendar Consulta <span>→</span>
+            </a>
+          </div>
+          <div className={styles.processRight}>
+            {PROCESS_ITEMS.map((item, i) => (
+              <div key={i} className={styles.processItem}>
+                <span className={styles.processNum}>0{i + 1}</span>
+                <p className={styles.processText}>{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ── TESTIMONIALS ────────────────────────────────────
 const TESTIMONIALS = [
   { init:'AL', name:'Ana Luíza M.', city:'Recife, PE', treat:'Alopecia androgenética',
     text:'A Dra. Mirela foi a primeira médica que realmente investigou a causa da minha queda de cabelo. Em duas consultas chegou ao diagnóstico correto. Seis meses depois, meu cabelo está completamente diferente.' },
@@ -133,27 +196,23 @@ const TESTIMONIALS = [
   { init:'MS', name:'Mariana S.', city:'Olinda, PE', treat:'Alopecia areata',
     text:'Além do tratamento eficaz, ela cuida do emocional do paciente. Sinto que encontrei uma médica de verdade, que se importa com a pessoa, não só com o problema.' },
   { init:'JB', name:'Juliana B.', city:'Recife, PE', treat:'Transplante de sobrancelhas',
-    text:'O resultado foi além do que eu esperava — natural, simétrico, perfeito. A anestesia foi tão bem feita que quase não senti nada. Me arrependia de não ter feito antes.' },
+    text:'O resultado foi além do que eu esperava — natural, simétrico, perfeito. A anestesia foi tão bem feita que quase não senti nada. Me arrependi de não ter feito antes.' },
 ]
 
 export function Testimonials() {
-  const [idx, setIdx]       = useState(0)
+  const [idx, setIdx]         = useState(0)
   const [visible, setVisible] = useState(true)
-  const timerRef = useRef(null)
+  const timerRef              = useRef(null)
 
   const goTo = (next) => {
     setVisible(false)
-    timerRef.current = setTimeout(() => {
-      setIdx(next)
-      setVisible(true)
-    }, 350)
+    timerRef.current = setTimeout(() => { setIdx(next); setVisible(true) }, 350)
   }
-
   useEffect(() => () => clearTimeout(timerRef.current), [])
 
   const prev = () => goTo((idx - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)
   const next = () => goTo((idx + 1) % TESTIMONIALS.length)
-  const t = TESTIMONIALS[idx]
+  const t    = TESTIMONIALS[idx]
 
   return (
     <section id="depoimentos" className={styles.testis}>
@@ -169,8 +228,6 @@ export function Testimonials() {
               <button onClick={next} aria-label="Próximo" className={styles.navBtn}>→</button>
             </div>
           </div>
-
-          {/* Fixed-height card with crossfade — no layout shift */}
           <div className={styles.testiCardWrap}>
             <div className={`${styles.testiCard} ${visible ? styles.testiVisible : styles.testiHidden}`}>
               <span className={styles.testiTreat}>{t.treat}</span>
@@ -190,15 +247,20 @@ export function Testimonials() {
   )
 }
 
-// ────────────────────────────────────────────────────
-// FAQ
-// ────────────────────────────────────────────────────
+// ── FAQ ─────────────────────────────────────────────
 const FAQS = [
-  { q: 'Quando devo consultar um tricologista?',    a: 'Se perceber queda excessiva (mais de 100 fios/dia de forma contínua), falhas no couro cabeludo, coceira persistente, descamação ou qualquer alteração no padrão capilar.' },
-  { q: 'Quanto tempo para ver resultados?',          a: 'Os primeiros resultados surgem entre 60 e 90 dias. Novos fios crescendo ficam visíveis a partir do 3º ao 6º mês. PRP e mesoterapia costumam apresentar respostas mais rápidas.' },
-  { q: 'O transplante de sobrancelhas dói?',         a: 'Por ser anestesiologista, a Dra. Mirela garante máximo conforto. O desconforto é mínimo durante o procedimento e não há restrições relevantes no pós.' },
-  { q: 'A queda de cabelo tem cura?',                a: 'Depende da causa. Alopecias por origem hormonal, nutricional ou estresse têm excelente resposta e podem ser completamente revertidas. Alopecia androgenética é controlada com resultados duradouros.' },
-  { q: 'Atende por plano de saúde?',                 a: 'A consulta é particular. Fornecemos recibo detalhado para reembolso junto ao seu convênio, conforme as regras de cobertura.' },
+  { q: 'Quando devo consultar um tricologista?',
+    a: 'Se perceber queda excessiva (mais de 100 fios/dia de forma contínua), falhas no couro cabeludo, coceira persistente, descamação ou qualquer alteração no padrão capilar. Quanto antes o diagnóstico, melhores os resultados.' },
+  { q: 'O que é tricoscopia com inteligência artificial?',
+    a: 'É um exame de alta resolução que analisa os fios e o couro cabeludo com videotricoscopia e IA. Gera um laudo digital com análise de densidade e contagem de fios — permitindo diagnóstico preciso e acompanhamento objetivo da evolução.' },
+  { q: 'Quanto tempo para ver resultados?',
+    a: 'Os primeiros resultados surgem entre 60 e 90 dias. Novos fios ficam visíveis do 3º ao 6º mês. PRP e mesoterapia costumam ter respostas mais rápidas. A evolução é monitorada com a tecnologia de imagem da clínica.' },
+  { q: 'O transplante de sobrancelhas dói?',
+    a: 'O procedimento é realizado com anestesia segura e especializada. O desconforto é mínimo e não há restrições relevantes no pós-operatório. A Dra. Mirela possui protocolo exclusivo para regeneração e transplante de sobrancelhas.' },
+  { q: 'A queda de cabelo tem cura?',
+    a: 'Depende da causa. Alopecias de origem hormonal, nutricional ou por estresse têm excelente resposta ao tratamento. Alopecia androgenética é controlada com resultados duradouros. O diagnóstico correto é o primeiro passo.' },
+  { q: 'Atende por plano de saúde?',
+    a: 'A consulta é particular. Fornecemos recibo detalhado para reembolso junto ao seu convênio, conforme as regras de cobertura do plano.' },
 ]
 
 export function FAQ() {
@@ -211,7 +273,7 @@ export function FAQ() {
             <span className={styles.eyebrow}>Dúvidas frequentes</span>
             <h2 className={styles.sectionTitle}>Perguntas<br /><em>&amp; respostas</em></h2>
             <p className={styles.bodyText}>
-              Não encontrou o que procura? Agende uma consulta e esclareça tudo na avaliação clínica.
+              Não encontrou o que procura? Agende uma consulta e esclareça tudo com a Dra. Mirela.
             </p>
             <a href={WA} target="_blank" rel="noopener noreferrer" className={styles.textLink} style={{marginTop:'1.5rem',display:'inline-block'}}>
               Agendar consulta →
@@ -236,9 +298,7 @@ export function FAQ() {
   )
 }
 
-// ────────────────────────────────────────────────────
-// CONTACT
-// ────────────────────────────────────────────────────
+// ── CONTACT ─────────────────────────────────────────
 export function Contact() {
   return (
     <section id="contato" className={styles.contact}>
@@ -250,26 +310,38 @@ export function Contact() {
               O cuidado começa<br /><em>com uma consulta.</em>
             </h2>
             <p className={styles.bodyText} style={{marginBottom:'2rem'}}>
-              Para agendar sua consulta, entre em contato pelo WhatsApp. Respondemos com rapidez.
+              Para agendar sua consulta, entre em contato pelo WhatsApp ou Instagram.
+              Respondemos com rapidez.
             </p>
             <div className={styles.contactLinks}>
               <div className={styles.contactLink}>
-                <div><span className={styles.contactLabel}>WhatsApp</span><span className={styles.contactValue}>(81) 9 9999-9999</span></div>
+                <div>
+                  <span className={styles.contactLabel}>WhatsApp</span>
+                  <span className={styles.contactValue}>(81) 9 4385-1120</span>
+                </div>
                 <a href={WA} target="_blank" rel="noopener noreferrer" className={styles.contactAction}>Agendar consulta →</a>
               </div>
               <div className={styles.contactLink}>
-                <div><span className={styles.contactLabel}>Instagram</span><span className={styles.contactValue}>@mirela_albuquerque</span></div>
-                <a href="https://instagram.com/mirela_albuquerque" target="_blank" rel="noopener noreferrer" className={styles.contactAction}>Ver perfil →</a>
+                <div>
+                  <span className={styles.contactLabel}>Instagram</span>
+                  <span className={styles.contactValue}>@mirela_albuquerque</span>
+                </div>
+                <a href={IG} target="_blank" rel="noopener noreferrer" className={styles.contactAction}>Ver perfil →</a>
               </div>
               <div className={styles.contactLink}>
-                <div><span className={styles.contactLabel}>Localização</span><span className={styles.contactValue}>Recife, Pernambuco — PE</span></div>
+                <div>
+                  <span className={styles.contactLabel}>Endereço</span>
+                  <span className={styles.contactValue}>Av. República do Líbano, 251<br />Torre 4 — sala 809 — Pina, Recife</span>
+                </div>
               </div>
             </div>
           </div>
           <div className={styles.contactRight}>
-            <p className={styles.contactQuote}>"Cada cabelo conta uma história. O meu papel é ajudá-lo a reescrever a sua."</p>
-            <span className={styles.eyebrow}>Dra. Mirela Albuquerque</span>
-            <div className={styles.contactImg}><img src={CONTACT_IMG} alt="Consultório" /></div>
+            <div className={styles.contactImg}>
+              <img src={CONTACT_IMG} alt="Dra. Mirela Albuquerque" />
+            </div>
+            <p className={styles.contactQuote}>"Aqui, cada fio importa, e você também."</p>
+            <span className={styles.contactAttr}>Dra. Mirela Albuquerque — Médica Tricologista</span>
           </div>
         </div>
       </div>
@@ -277,9 +349,7 @@ export function Contact() {
   )
 }
 
-// ────────────────────────────────────────────────────
-// FOOTER
-// ────────────────────────────────────────────────────
+// ── FOOTER ──────────────────────────────────────────
 export function Footer() {
   const year = new Date().getFullYear()
   return (
@@ -287,21 +357,35 @@ export function Footer() {
       <div className="wrap">
         <div className={styles.footerGrid}>
           <div>
-            <p className={styles.footerName}>Mirela Albuquerque</p>
-            <p className={styles.footerSub}>Médica Tricologista</p>
-            <p className={styles.footerInfo}>CRM-PE 16392 · RQE 3555<br />Recife, Pernambuco — Brasil</p>
+            <img
+              src="/images/logo-footer.png"
+              alt="Mirela Albuquerque — Médica Tricologista"
+              style={{ height: '72px', width: 'auto', objectFit: 'contain', marginBottom: '16px', display: 'block' }}
+            />
+            <p className={styles.footerInfo}>
+              CRM-PE 16392 · RQE 3555<br />
+              Av. República do Líbano, 251, Torre 4 — sala 809<br />
+              Pina, Recife — PE
+            </p>
           </div>
           <div>
             <p className={styles.footerColTitle}>Navegação</p>
-            {['Início','Sobre','Especialidades','Depoimentos','FAQ','Contato'].map(l => (
-              <a key={l} href={`#${l.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')}`} className={styles.footerLink}>{l}</a>
+            {[
+              ['Sobre',          '#sobre'],
+              ['Especialidades', '#especialidades'],
+              ['Consulta',       '#consulta'],
+              ['Depoimentos',    '#depoimentos'],
+              ['FAQ',            '#faq'],
+              ['Contato',        '#contato'],
+            ].map(([label, href]) => (
+              <a key={href} href={href} className={styles.footerLink}>{label}</a>
             ))}
           </div>
           <div>
             <p className={styles.footerColTitle}>Contato</p>
-            <a href={WA} target="_blank" rel="noopener noreferrer" className={styles.footerLink}>WhatsApp</a>
-            <a href="https://instagram.com/mirela_albuquerque" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>@mirela_albuquerque</a>
-            <span className={styles.footerLink}>Recife, PE</span>
+            <a href={WA}  target="_blank" rel="noopener noreferrer" className={styles.footerLink}>(81) 9 4385-1120</a>
+            <a href={IG}  target="_blank" rel="noopener noreferrer" className={styles.footerLink}>@mirela_albuquerque</a>
+            <span className={styles.footerLink}>Pina, Recife — PE</span>
           </div>
         </div>
         <div className={styles.footerBar}>
@@ -313,9 +397,7 @@ export function Footer() {
   )
 }
 
-// ────────────────────────────────────────────────────
-// WA BUTTON
-// ────────────────────────────────────────────────────
+// ── WA BUTTON ───────────────────────────────────────
 export function WhatsAppButton() {
   return (
     <a href={WA} target="_blank" rel="noopener noreferrer" aria-label="Agendar consulta pelo WhatsApp" className={styles.waBtn}>

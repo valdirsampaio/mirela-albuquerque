@@ -44,7 +44,7 @@ function NavLink({ href, children }) {
         position: 'absolute',
         bottom: 0, left: 0, right: 0,
         height: '1px',
-        background: '#A67C52',
+        background: '#612C1D',
         transform: hovered ? 'scaleX(1)' : 'scaleX(0)',
         transformOrigin: 'left center',
         transition: 'transform 0.35s cubic-bezier(0.22, 1, 0.36, 1)',
@@ -99,32 +99,17 @@ export default function Navbar() {
           padding: '20px clamp(1.25rem, 5vw, 5rem)',
         }}>
 
-          {/* Logo */}
+          {/* Logo — brand image */}
           <a
             href="#inicio"
             onClick={() => setOpen(false)}
-            style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', gap: '4px', flexShrink: 0 }}
+            style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', flexShrink: 0 }}
           >
-            <span style={{
-              fontFamily: "'Playfair Display', Georgia, serif",
-              fontSize: 'clamp(1.25rem, 1.8vw, 1.5rem)',
-              fontWeight: 400,
-              color: '#1C1917',
-              letterSpacing: '0.01em',
-              lineHeight: 1.2,
-              whiteSpace: 'nowrap',
-            }}>
-              Mirela Albuquerque
-            </span>
-            <span style={{
-              fontFamily: "'Outfit', system-ui, sans-serif",
-              fontSize: '0.5625rem',
-              letterSpacing: '0.22em',
-              textTransform: 'uppercase',
-              color: '#A67C52',
-            }}>
-              Tricologista
-            </span>
+            <img
+              src="/images/logo-navbar.png"
+              alt="Mirela Albuquerque — Médica Tricologista"
+              style={{ height: '36px', width: 'auto', objectFit: 'contain' }}
+            />
           </a>
 
           {/* Desktop nav links */}
@@ -150,7 +135,7 @@ export default function Navbar() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 padding: '12px 24px',
-                backgroundColor: '#A67C52',
+                backgroundColor: '#612C1D',
                 color: '#fff',
                 fontFamily: "'Outfit', system-ui, sans-serif",
                 fontSize: '0.6875rem',
@@ -187,22 +172,23 @@ export default function Navbar() {
       {mobile && (
         <div style={{
           position: 'fixed', inset: 0, zIndex: 40,
-          backgroundColor: '#FAFAF8',
-          display: 'flex', flexDirection: 'column',
-          padding: '96px 2rem 3rem',
+          backgroundColor: 'var(--paper, #F5EFE6)',
+          display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+          padding: '80px 2rem 2rem',
           opacity: open ? 1 : 0,
           pointerEvents: open ? 'auto' : 'none',
           transition: 'opacity 0.4s',
         }}>
-          <nav style={{ display: 'flex', flexDirection: 'column', gap: '28px', flex: 1 }}>
+          <nav style={{ display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center', marginBottom: '40px' }}>
             {LINKS.map(l => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
                 style={{
-                  fontFamily: "'Playfair Display', Georgia, serif",
-                  fontSize: '2.5rem', fontWeight: 400,
+                  fontFamily: "'Josefin Sans', system-ui, sans-serif",
+                  fontSize: '1.125rem', fontWeight: 300,
+                  letterSpacing: '0.22em', textTransform: 'uppercase',
                   color: '#1C1917', textDecoration: 'none',
                 }}
               >
@@ -217,7 +203,7 @@ export default function Navbar() {
             onClick={() => setOpen(false)}
             style={{
               display: 'block', textAlign: 'center',
-              backgroundColor: '#A67C52', color: '#fff',
+              backgroundColor: '#612C1D', color: '#fff',
               fontFamily: "'Outfit', system-ui, sans-serif",
               fontSize: '0.6875rem', letterSpacing: '0.18em', textTransform: 'uppercase',
               padding: '16px', textDecoration: 'none',

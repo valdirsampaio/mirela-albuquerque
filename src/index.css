@@ -1,16 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Josefin+Sans:wght@100;200;300;400&display=swap');
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
+  /* Brand palette extracted from Dra. Mirela's identity */
   --ink:    #1C1917;
-  --ink2:   #6B6560;
-  --paper:  #FAFAF8;
-  --warm:   #F2EDE6;
-  --line:   #E2DDD8;
-  --rose:   #A67C52;
-  --rose2:  #8B6340;
-  --dark:   #16120F;
+  --ink2:   #6B5F58;
+  --paper:  #F5EFE6;   /* warm cream from brand */
+  --warm:   #EDE4D8;   /* slightly darker cream */
+  --line:   #D5C8BA;   /* warm taupe border */
+  --rose:   #612C1D;   /* dark terracota - primary brand color */
+  --rose2:  #4A1F12;   /* deeper terracota for hover */
+  --accent: #A67C52;   /* golden brown - secondary */
+  --dark:   #1C1917;
   --serif:  'Playfair Display', Georgia, serif;
-  --sans:   'Outfit', system-ui, sans-serif;
+  --sans:   'Josefin Sans', 'Outfit', system-ui, sans-serif;
   --ease:   cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -26,80 +30,35 @@ body {
 img { display: block; max-width: 100%; }
 
 ::selection { background: var(--warm); color: var(--ink); }
-
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--warm); }
 ::-webkit-scrollbar-thumb { background: var(--line); border-radius: 2px; }
 
-/* ── Typography helpers ── */
-.f-serif    { font-family: var(--serif); }
-.f-display  { font-family: var(--serif); font-weight: 400; line-height: 1.06; letter-spacing: -0.015em; }
-.eyebrow    { font-size: 0.5625rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rose); }
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.5625rem; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--rose); display: block; margin-bottom: 16px; font-weight: 300;
+}
 
-/* ── Layout ── */
 .wrap { max-width: 1320px; margin-inline: auto; padding-inline: clamp(1.25rem, 5vw, 5rem); }
 
-/* ── Buttons / links ── */
 .btn-text-rose {
-  font-size: 0.5625rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--rose);
-  background: none; border: none;
-  cursor: pointer; padding: 0;
-  position: relative;
-  text-decoration: none;
-  display: inline-block;
+  font-size: 0.5625rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--rose); background: none; border: none;
+  cursor: pointer; padding: 0; position: relative; text-decoration: none; display: inline-block;
 }
 .btn-text-rose::after {
-  content: '';
-  position: absolute;
-  bottom: -3px; left: 0; right: 0;
-  height: 1px;
-  background: var(--rose);
+  content: ''; position: absolute; bottom: -3px; left: 0; right: 0;
+  height: 1px; background: var(--rose);
 }
-
 .btn-text-muted {
-  font-size: 0.5625rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink2);
-  background: none; border: none;
-  cursor: pointer; padding: 0;
-  opacity: 0.7;
-  transition: opacity 0.2s;
-  text-decoration: none;
+  font-size: 0.5625rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ink2); background: none; border: none;
+  cursor: pointer; padding: 0; opacity: 0.7; transition: opacity 0.2s; text-decoration: none;
 }
-.btn-text-muted:hover { opacity: 1; }
-
-/* ── Divider line ── */
 .divider { width: 2rem; height: 1px; background: var(--rose); display: block; }
-
-/* ── Stripe decoration ── */
 .stripe-left {
   position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
-  background: repeating-linear-gradient(
-    180deg,
-    var(--rose) 0, var(--rose) 3px,
-    transparent 3px, transparent 9px
-  );
+  background: repeating-linear-gradient(180deg, var(--rose) 0, var(--rose) 3px, transparent 3px, transparent 9px);
 }
-
-/* ── Animations ── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-.anim-up   { animation: fadeUp  0.85s var(--ease) both; }
-.anim-fade { animation: fadeIn  1s   var(--ease) both; }
-.d1 { animation-delay: 0.1s; }
-.d2 { animation-delay: 0.25s; }
-.d3 { animation-delay: 0.4s; }
-.d4 { animation-delay: 0.55s; }
-
-/* ── Focus ── */
-:focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }

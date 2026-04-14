@@ -4,6 +4,7 @@ import {
   Intro,
   About,
   Treatments,
+  Process,
   Testimonials,
   FAQ,
   Contact,
@@ -19,6 +20,7 @@ export default function App() {
         <Hero />
         <Intro />
         <Treatments />
+        <Process />
         <About />
         <Testimonials />
         <FAQ />
