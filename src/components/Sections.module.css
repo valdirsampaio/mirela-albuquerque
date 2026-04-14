@@ -287,8 +287,11 @@
 @media (max-width: 900px) {
   .intro { grid-template-columns: 1fr; gap: 1.5rem; }
   .introDivider { display: none; }
-  .about { grid-template-columns: 1fr; }
-  .aboutImg { min-height: 60vw; }
+  /* About — stack vertically on mobile */
+  .aboutInner { grid-template-columns: 1fr !important; padding-inline: 0 !important; }
+  .aboutImg { min-height: 75vw; max-height: 480px; }
+  .aboutImg img { object-position: center 8%; }
+  .aboutText { padding: 2rem clamp(1.25rem, 5vw, 2rem) !important; }
   .testisGrid { grid-template-columns: 1fr; }
   .testiCardWrap { height: 380px; }
   .faqGrid { grid-template-columns: 1fr; }
@@ -301,12 +304,6 @@
   .footerBar { flex-direction: column; }
 }
 
-/* mobile about fix */
-
-@media (max-width: 900px) {
-  .aboutImg { min-height: 70vw !important; max-height: 500px; }
-  .aboutImg img { object-position: center 10% !important; }
-}
 
 /* mobile imgtag */
 
@@ -319,11 +316,6 @@
   .imgTag strong { font-size: 0.8rem; margin-top: 2px; }
 }
 
-/* about mobile margin */
-
-@media (max-width: 900px) {
-  .aboutImg { margin-right: 0 !important; min-height: 65vw !important; max-height: 480px; }
-}
 
 /* ══ PROCESS ══════════════════════════════════════ */
 .process {
